@@ -11,10 +11,9 @@ describe('GET /api', () => {
 
         expect(res.text).toMatch('DESDE API') // un string al cual no puedo acceder
         expect(res.body.msj).toBe('DESDE API') // un string al cual puedo acceder al valor deseado
-
-        console.log(res.text)
-        console.log(res.body)
         
+        expect(res.status).not.toBe(404)
+        expect(res.body.msj).not.toBe('desde api')
     })
 })
 
